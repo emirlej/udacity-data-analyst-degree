@@ -218,21 +218,29 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q2:-What-is-an-appropriate-set-of-hypotheses-for-this-task?-What-kind-of-statistical-test-do-you-expect-to-perform?-Justify-your-choices.">Q2: What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.<a class="anchor-link" href="#Q2:-What-is-an-appropriate-set-of-hypotheses-for-this-task?-What-kind-of-statistical-test-do-you-expect-to-perform?-Justify-your-choices.">&#182;</a></h2><ul>
-<li>An appropriate hypothesis for this task is that there is no difference in response time between the two type of word-color lists. </li>
-<li>A way of testing this is to create multiple, equally long lists of words which are:<ul>
-<li>Case a): word-color match (congruent); you have to answer the color which is written.</li>
-<li>Case b): word-color mismatch (incongruent); one has to answer the color of the letters, not the written word itself.</li>
+<h2 id="Q2:-What-is-an-appropriate-set-of-hypotheses-for-this-task?-What-kind-of-statistical-test-do-you-expect-to-perform?-Justify-your-choices.">Q2: What is an appropriate set of hypotheses for this task? What kind of statistical test do you expect to perform? Justify your choices.<a class="anchor-link" href="#Q2:-What-is-an-appropriate-set-of-hypotheses-for-this-task?-What-kind-of-statistical-test-do-you-expect-to-perform?-Justify-your-choices.">&#182;</a></h2><p>In this test, we have assessed human ability to process letters and colors. A sample of $n = 24$ persons have performed the Stroop experiment. They went through two different word lists, containing color names (red, blue, green and etc.). In the first list, the word and color of the ink were same. The persons had to go through the list and say the name which is described by the letters. This is called the congruent case. The other list had a different ink color, than the letters spell. The volunteers needed to say the color of the ink, so-called incongruent case. A dataset containing the time each person needed to go through both lists was given to us in this experiment.</p>
+<p>A hypothesis test will be performed to assess whether we have enough evidence from the sample, $X$, to infer evidence for the entire population, $U$ ref. /4/. Is there a real difference in the population, or are the sample result picked by chance? From the dataset, we will compare the sample mean times, namely sample mean congruent time ($\bar{X}_C$), and sample mean incongruent time ($\bar{X}_I$). They will be assessed in the hypothesis test, to infer evidence for the difference between the real population means, $\mu_C$ and $\mu_I$.</p>
+<h3 id="Proposed-hypothesis-test:">Proposed hypothesis test:<a class="anchor-link" href="#Proposed-hypothesis-test:">&#182;</a></h3><ul>
+<li>$H_0: \mu_C - \mu_I = 0$ </li>
+<li>$H_a: \mu_C - \mu_I < 0 $</li>
 </ul>
-</li>
-</ul>
-<p>Then collect the time used going through these lists.</p>
-<h3 id="Appropriate-hypothesis:">Appropriate hypothesis:<a class="anchor-link" href="#Appropriate-hypothesis:">&#182;</a></h3><p>$T_a$: Average time to go through case a lists. $T_b$: Average time to go through case b lists.</p>
 <ul>
-<li>$H_0: T_a - T_b \geq 0$</li>
-<li>$H_a: T_a - T_b < 0 $</li>
+<li>$H_0$: Null hypothesis. In our case, it states that the population parameters $\mu_C$ and $\mu_I$ are the same.</li>
+<li>$H_a$: Alternative hypothesis. It states that the population parameters differ. In our case, we assume that $\mu_C$ is smaller than $\mu_I$. Meaning that people tend to process semantics faster than colors.</li>
 </ul>
-<p>I would perform a one-tailed test with a-level of 0.05 to conclude that it is statistically significant that $T_a$ is less than $T_b$. Choosing a smaller a-level of 0.01 or 0.001 may also be adequate. However, the test is not that crucial and the already performed experiments show that $T_a$ is smaller than $T_b$.</p>
+<h3 id="Choosing-to-perform-a-t-test">Choosing to perform a t-test<a class="anchor-link" href="#Choosing-to-perform-a-t-test">&#182;</a></h3><p>We are going to perform a t-test based on these criteria (ref. /4/ and ref. /5/):</p>
+<ol>
+<li>Assessing the sample means, $\bar{X}_I$ and $\bar{X}_C$.</li>
+<li>We do not know the population standard deviation, $\sigma$.</li>
+<li>Sample is less than 30 ($n=24$).</li>
+<li>Assuming a normally distributed population.</li>
+</ol>
+<p>Also, since same person goes through both the congruent and incongruent case, <b><u>this test is an dependent t-test.</u></b></p>
+<h3 id="This-hypothesis-test-will-be-performed-using-sample-mean-statistics:">This hypothesis test will be performed using sample mean statistics:<a class="anchor-link" href="#This-hypothesis-test-will-be-performed-using-sample-mean-statistics:">&#182;</a></h3><p>As we do not have information about the population parameters and we are performing a t-test from a sample, we will apply the sample mean statistics in our hypothesis test:</p>
+<ul>
+<li>$H_0: \bar{X}_C - \bar{X}_I = 0$ </li>
+<li>$H_a: \bar{X}_C- \bar{X}_I < 0 $</li>
+</ul>
 
 </div>
 </div>
@@ -399,7 +407,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Central-tendency-measures:">Central tendency measures:<a class="anchor-link" href="#Central-tendency-measures:">&#182;</a></h3><p>From the table above, we see that the <b>mean values for congruent and incongruent are 14.05 [s] and 22.02 [s]</b>, respectively. The difference in mean is roughly 8 [s], which is quite significant. We would need to perform a t-test to confirm that the difference is not by chance. Also, we see that for both conditions, the mean and median are near each other. The median values are listed in the 50% row above.</p>
+<h3 id="Central-tendency-measures:">Central tendency measures:<a class="anchor-link" href="#Central-tendency-measures:">&#182;</a></h3><p>From the table above, we see that the <b>mean values for congruent and incongruent are 14.05 s and 22.02 s</b>, respectively. The difference in mean is roughly 8 s, which is quite significant. We would need to perform a t-test to confirm that the difference is not by chance. Furthermore, we see that for both conditions, the mean and median are near each other. The median values are listed in the 50 % row above.</p>
 
 </div>
 </div>
@@ -425,7 +433,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x9eb6ac8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x9d2dac8&gt;</pre>
 </div>
 
 </div>
@@ -533,10 +541,10 @@ YII=
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Variability">Variability<a class="anchor-link" href="#Variability">&#182;</a></h3><p>From the describe-table and the box plots, it is demonstrated that variability is greater for the incongruent case. The standard deviations are:</p>
 <ul>
-<li>congruent: 3.6 [s]</li>
-<li>incongruent:     4.8 [s]</li>
+<li>congruent: 3.6 s</li>
+<li>incongruent:     4.8 s</li>
 </ul>
-<p>The greater variability for the incongruent case is further illustrated by the outliers in the box plot. This may indicate that there are larger differences in evaluating colors in the population, than reading text.</p>
+<p>The greater variability for the incongruent case is further illustrated by the outliers in the box plot. This may indicate larger differences in evaluating colors in the population, than understanding the semantics.</p>
 
 </div>
 </div>
@@ -574,7 +582,7 @@ YII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0xa104b70&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x9fbf8d0&gt;</pre>
 </div>
 
 </div>
@@ -583,7 +591,7 @@ YII=
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0xa0dd8d0&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x9f98898&gt;</pre>
 </div>
 
 </div>
@@ -1213,7 +1221,7 @@ hBAxSBK4EEIIEYMkgQshhBAxSBK4EEIIEYP+H6yISpKO7ratAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Q5.-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">Q5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?<a class="anchor-link" href="#Q5.-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">&#182;</a></h2><h3 id="Means,-stds-and-ratio:">Means, stds and ratio:<a class="anchor-link" href="#Means,-stds-and-ratio:">&#182;</a></h3>
+<h2 id="Q5.-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">Q5. Now, perform the statistical test and report your results. What is your confidence level and your critical statistic value? Do you reject the null hypothesis or fail to reject it? Come to a conclusion in terms of the experiment task. Did the results match up with your expectations?<a class="anchor-link" href="#Q5.-Now,-perform-the-statistical-test-and-report-your-results.-What-is-your-confidence-level-and-your-critical-statistic-value?-Do-you-reject-the-null-hypothesis-or-fail-to-reject-it?-Come-to-a-conclusion-in-terms-of-the-experiment-task.-Did-the-results-match-up-with-your-expectations?">&#182;</a></h2><h3 id="Sample-mean-and-standard-deviation">Sample mean and standard deviation<a class="anchor-link" href="#Sample-mean-and-standard-deviation">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -1222,19 +1230,16 @@ hBAxSBK4EEIIEYMkgQshhBAxSBK4EEIIEYP+H6yISpKO7ratAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">df_con</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Congruent&quot;</span><span class="p">]</span>
-<span class="n">df_incon</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Incongruent&quot;</span><span class="p">]</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">df_c</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Congruent&quot;</span><span class="p">]</span>
+<span class="n">df_i</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Incongruent&quot;</span><span class="p">]</span>
 
-<span class="c1"># Mean values</span>
-<span class="n">mu_con</span><span class="p">,</span> <span class="n">mu_incon</span> <span class="o">=</span> <span class="n">df_con</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">df_incon</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="c1"># Standard deviations</span>
-<span class="n">s_con</span><span class="p">,</span> <span class="n">s_incon</span> <span class="o">=</span> <span class="n">df_con</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="n">df_incon</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="c1"># Mean sample values</span>
+<span class="n">xbar_c</span><span class="p">,</span> <span class="n">xbar_i</span> <span class="o">=</span> <span class="n">df_c</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">df_i</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="c1"># Mean standard deviation from sample, found from the difference between the two time vectors.</span>
+<span class="n">s_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_c</span> <span class="o">-</span> <span class="n">df_i</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
 
-<span class="k">print</span> <span class="n">mu_con</span><span class="p">,</span> <span class="n">mu_incon</span>
-<span class="k">print</span> <span class="n">s_con</span><span class="p">,</span> <span class="n">s_incon</span>
-
-<span class="c1"># Ratio between the std </span>
-<span class="k">print</span> <span class="s2">&quot;Ratio stds: </span><span class="si">%g</span><span class="s2"> &quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">s_incon</span><span class="o">/</span><span class="n">s_con</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">xbar_c</span><span class="p">,</span> <span class="n">xbar_i</span>
+<span class="k">print</span> <span class="n">s_d</span>
 </pre></div>
 
 </div>
@@ -1248,8 +1253,7 @@ hBAxSBK4EEIIEYMkgQshhBAxSBK4EEIIEYP+H6yISpKO7ratAAAAAElFTkSuQmCC
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>14.051125 22.0159166667
-3.55935795765 4.79705712247
-Ratio stds: 1.34773 
+4.86482691036
 </pre>
 </div>
 </div>
@@ -1263,9 +1267,15 @@ Ratio stds: 1.34773
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From <b>ref. /2/</b>, it is said that we can use pooled variance: <u>"If the two standard deviations are similar (neither is more than twice of the other), then the pooled standard error is used"</u>. <b>We have a ratio of ~1.35</b>, meaning that we can calculate the pooled standard error.</p>
-<p>Pooled std. is found by equation:</p>
-$$sp = \sqrt{\frac{SS_1 + SS_2}{df_1 + df_2}}$$<h3 id="Pooled-standard-deviation">Pooled standard deviation<a class="anchor-link" href="#Pooled-standard-deviation">&#182;</a></h3>
+<h3 id="Testing-the-hypothesis">Testing the hypothesis<a class="anchor-link" href="#Testing-the-hypothesis">&#182;</a></h3><p>We will now perform the hypothesis test, which was assigned in Q2 above. With the stated alternative hypothesis, $H_a$, we will perform a left-tailed test. To calculate the t-statistic, we will use equation (ref. /5/):</p>
+$$t = \frac{\bar{X_C}-\bar{X_I}}{\frac{s_D}{\sqrt{n}}}$$<ul>
+<li>$\bar{X}_I$: Average time of the incongruent sample.</li>
+<li>$\bar{X}_C$: Average time of the congruent sample.</li>
+<li>$s_D$ : Standard deviation for the congruent and incongruent samples difference</li>
+<li>$n$ : Number of people in the sample.</li>
+</ul>
+<p>An $\alpha$-value of .05 is chosen for this purpose and will be used to compute the critical t-value. A sample result is called statistically significant when the p-value for a test statistic is less than or equal to the level of significance. This is also known as the $\alpha$-level. A p-value may be seen as the following conditional probability: $P(\textrm{Reject } H_0 \textrm{ | } H_0 \textrm{ is true})$. It is probability of performing a Type I error, ref. /6/.</p>
+
 </div>
 </div>
 </div>
@@ -1274,62 +1284,17 @@ $$sp = \sqrt{\frac{SS_1 + SS_2}{df_1 + df_2}}$$<h3 id="Pooled-standard-deviation
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c1"># Pooled standard error calculation</span>
-<span class="n">SS_con</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_con</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_con</span><span class="p">])</span>
-<span class="n">SS_incon</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">([(</span><span class="n">x</span> <span class="o">-</span> <span class="n">mu_incon</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">df_incon</span><span class="p">])</span>
-<span class="c1"># Degrees of freedom. OBS do not use dataframe variable, df!</span>
-<span class="n">dof_con</span> <span class="o">=</span> <span class="n">df_con</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="n">dof_incon</span> <span class="o">=</span> <span class="n">df_incon</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span>
-
-<span class="n">sp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">SS_con</span> <span class="o">+</span> <span class="n">SS_incon</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">dof_con</span> <span class="o">+</span> <span class="n">dof_incon</span><span class="p">))</span>
-<span class="k">print</span> <span class="n">sp</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4.22378894518
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Testing-the-hypothesis">Testing the hypothesis<a class="anchor-link" href="#Testing-the-hypothesis">&#182;</a></h3><p>We will now perform the hypothesis test, which was assigned in Q2 above.</p>
-$$H_0: \mu_{con} - \mu_{incon} \geq 0$$$$H_a: \mu_{con} - \mu_{incon} < 0 $$<p>$\alpha$-level of 0.05. Based on the alternative hypo. the test is left-tailed.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># Critical t-stat</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
-<span class="n">dof</span> <span class="o">=</span> <span class="n">dof_incon</span> <span class="o">+</span> <span class="n">dof_con</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">df_c</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">dof</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="n">t_crit</span> <span class="o">=</span> <span class="o">-</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
 <span class="k">print</span> <span class="s2">&quot;Critical t-stat: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t_crit</span>
 
 <span class="c1"># Standard error</span>
-<span class="n">SE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">sp</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">df_con</span><span class="o">.</span><span class="n">count</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="n">sp</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">df_incon</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+<span class="n">SE</span> <span class="o">=</span> <span class="n">s_d</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 <span class="c1"># Calculate the sample t-stat</span>
-<span class="n">t_stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">mu_con</span> <span class="o">-</span> <span class="n">mu_incon</span><span class="p">)</span> <span class="o">/</span> <span class="n">SE</span>
+<span class="n">t_stat</span> <span class="o">=</span> <span class="p">(</span><span class="n">xbar_c</span> <span class="o">-</span> <span class="n">xbar_i</span><span class="p">)</span> <span class="o">/</span> <span class="n">SE</span>
 <span class="k">print</span> <span class="s2">&quot;Sample t-stat: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t_stat</span>
 </pre></div>
 
@@ -1343,8 +1308,8 @@ $$H_0: \mu_{con} - \mu_{incon} \geq 0$$$$H_a: \mu_{con} - \mu_{incon} < 0 $$<p>$
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Critical t-stat: -1.67866
-Sample t-stat: -6.53225
+<pre>Critical t-stat: -1.71387
+Sample t-stat: -8.02071
 </pre>
 </div>
 </div>
@@ -1358,32 +1323,31 @@ Sample t-stat: -6.53225
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We see that the calculated t-stat significantly smaller than t-crit, which means that we can reject null hypo. with a $p \leq 0.05$.</p>
-<h3 id="Confidece-interval">Confidece interval<a class="anchor-link" href="#Confidece-interval">&#182;</a></h3><p>A 95% confidence interval between the mean difference will be constructed. Since the incongruent average time is greatest, the difference evaluated will be: $\mu_d = \mu_{incon} - \mu_{con}$. We used a directional t-test previously, so we need to calculate a new, two-tailed t-crit for the confidence interval.</p>
-<p>We will use the pooled standard error $S_{\bar{x}-\bar{y}}$ to calculate the confidence interval:</p>
-$$\mu_d \pm t \cdot S_{\bar{x}-\bar{y}}$$<p>where,</p>
-$$S_{\bar{x}-\bar{y}} = \sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}$$<p></p>
+<p>We see that the calculated t-stat significantly smaller than t-crit, which means that we can reject null hypo. with a $p \leq .05$.</p>
+<h3 id="Confidece-interval">Confidece interval<a class="anchor-link" href="#Confidece-interval">&#182;</a></h3><p>A 95% confidence interval between the mean difference will be constructed. Since the incongruent average time is greatest, the difference evaluated will be: $\bar{X}_D = \bar{X}_I - \bar{X}_C$. We used a directional t-test previously, so we need to calculate a new, two-tailed t-crit for the confidence interval.</p>
+<p>For the calculation of confidence interval, this equation will be applied:</p>
+$$\bar{X}_D \pm t \cdot \frac{s_D}{\sqrt{n}}$$<p>The $t$-value is computed using the 95% confidence interval in the middle of the distribution. Thus, the $\alpha$-level used to calculate the $t$-value have to be divided in half. The probability in both tails is .025.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c1"># The difference </span>
-<span class="n">mu_d</span> <span class="o">=</span> <span class="n">mu_incon</span> <span class="o">-</span> <span class="n">mu_con</span>
+<span class="n">xbar_d</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_i</span> <span class="o">-</span> <span class="n">df_c</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="c1"># 95% confidence interval</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
 <span class="c1"># Two tailed now</span>
-<span class="n">t_crit</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
-<span class="k">print</span> <span class="s2">&quot;T-crit: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t_crit</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
+<span class="k">print</span> <span class="s2">&quot;t-value: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">t_crit</span>
 
 <span class="c1"># Calculate the confidence interval for the mean difference</span>
-<span class="n">conf_int</span> <span class="o">=</span> <span class="p">[(</span><span class="n">mu_d</span> <span class="o">+</span> <span class="p">(</span><span class="n">t_crit</span><span class="o">*</span><span class="n">SE</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">conf_int</span> <span class="o">=</span> <span class="p">[(</span><span class="n">xbar_d</span> <span class="o">+</span> <span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">SE</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
 
-<span class="k">print</span> <span class="s2">&quot;mu_d: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">mu_d</span>
+<span class="k">print</span> <span class="s2">&quot;xbar_d: </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">xbar_d</span>
 <span class="k">print</span> <span class="s2">&quot;CI: [</span><span class="si">%s</span><span class="s2">]&quot;</span> <span class="o">%</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ci</span><span class="p">)</span> <span class="k">for</span> <span class="n">ci</span> <span class="ow">in</span> <span class="n">conf_int</span><span class="p">])</span>
 </pre></div>
 
@@ -1397,9 +1361,9 @@ $$S_{\bar{x}-\bar{y}} = \sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}}$$<p></p>
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>T-crit: 2.0129
-mu_d: 7.96479
-CI: [5.51046234617, 10.4191209872]
+<pre>t-value: -1.71387
+xbar_d: 7.96479
+CI: [5.91055542397, 10.0190279094]
 </pre>
 </div>
 </div>
@@ -1413,7 +1377,7 @@ CI: [5.51046234617, 10.4191209872]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We have now calculated a 95% CI for the mean difference. It is positive, between <b>5.5 - 10.2 [s]</b>. This also supports our hypothesis test, as the CI-values are above zero. This illustrates that people have more difficulties interpreting color, than words.</p>
+<p>We have now calculated a 95% CI for the mean difference. It is positive, between <b>5.91 - 10.02 s</b>. This also supports our hypothesis test, as the CI-values are above zero. This illustrates that people have more difficulties interpreting color, than words.</p>
 <h3 id="Comparing-my-results">Comparing my results<a class="anchor-link" href="#Comparing-my-results">&#182;</a></h3><p>The results when I undertook the Stroop experiment are listed below. I tested both sets (#1 and #2) two times. One can see that the time was reduced for the second try.</p>
 
 </div>
@@ -1421,14 +1385,14 @@ CI: [5.51046234617, 10.4191209872]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="n">congruent</span> <span class="o">=</span> <span class="p">[</span><span class="mf">15.639</span><span class="p">,</span> <span class="mf">9.771</span><span class="p">]</span>
 <span class="n">incongruent</span> <span class="o">=</span> <span class="p">[</span><span class="mf">23.596</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">]</span>
 
-<span class="n">mu_con</span><span class="p">,</span> <span class="n">mu_incon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">congruent</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">incongruent</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">mu_con</span><span class="p">,</span> <span class="n">mu_incon</span><span class="p">,</span> <span class="n">mu_incon</span><span class="o">-</span><span class="n">mu_con</span>
+<span class="n">xbar_c</span><span class="p">,</span> <span class="n">xbar_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">congruent</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">incongruent</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">xbar_c</span><span class="p">,</span> <span class="n">xbar_i</span><span class="p">,</span> <span class="n">xbar_i</span><span class="o">-</span><span class="n">xbar_c</span>
 </pre></div>
 
 </div>
@@ -1455,7 +1419,7 @@ CI: [5.51046234617, 10.4191209872]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Both average time values, $\mu_{con}$ and $mu_{incon}$, indicate that my results lie in the most probable area if we look at the plotted probability distributions above. Also, the my difference lies within the calculated confidence interval.</p>
+<p>My both average time values, $\bar{x}_C$ and $\bar{x}_I$, indicate that my results lie in the most probable area if we look at the plotted probability distributions above. Also, the my difference lies within the calculated confidence interval.</p>
 
 </div>
 </div>
@@ -1465,9 +1429,10 @@ CI: [5.51046234617, 10.4191209872]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h3><p>A statistical test was performed demonstrating human ability to process words and color. The processing was evaluated using equally long list of words with word-color match, and no word-color match. The time to go through the lists was used as input for the test. Our null hypothesis assumed no difference in the time going through the lists. An alternative hypothesis assumed that it takes longer time to go through the lists, where there is a word-color mismatch.</p>
-<p>The statistical test was performed using a one-tailed t-test and an $\alpha$-level of .05. The null hypothesis was rejected, showing that it is statistically significant with p-value $\leq$ .05, that it takes longer time to process color rather than letters.</p>
-<p>The dataset results listed mean time of 14.05 [s] and 22.02 [s] for the congruent and incongruent lists, respectively. The mean difference is 7.96 [s], with a 95% confidence interval of [5.51, 10.42]. This interval further implies that it takes longer time to process color over words, as it is above zero.</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>A statistical t-test was performed demonstrating human ability to process letters and colors. Each person in the sample evaluated  equally long lists of words with word-color match (congruent case), and non word-color match (incongruent case). The mean time going through the lists was used as input for the hypothesis. As the same person performed both tests, the time going through both lists is dependent. Thus, dependent t-test was performed.</p>
+<p>Our null hypothesis assumed no difference in the mean time. Our alternative hypothesis assumed that the mean time to go through the incongruent list is greater.</p>
+<p>The statistical test was performed using a one-tailed t-test and an $\alpha$-level of .05. The null hypothesis was rejected, showing that it is statistically significant with p-value $\leq$ .05. It takes longer time to process color rather than the semantics.</p>
+<p>The dataset results listed mean times of 14.05 s and 22.02 s for the congruent and incongruent lists, respectively. The mean difference is 7.96 s, with a 95% confidence interval of [5.91, 10.02]. Thus, the interval further implies that it takes longer time to process color over letters, as it is above zero.</p>
 
 </div>
 </div>
@@ -1479,8 +1444,11 @@ CI: [5.51046234617, 10.4191209872]
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1><ol>
 <li><a href="https://www.scribd.com/doc/111646449/Stroop-Effect">https://www.scribd.com/doc/111646449/Stroop-Effect</a></li>
-<li><a href="https://onlinecourses.science.psu.edu/stat200/node/60">https://onlinecourses.science.psu.edu/stat200/node/60</a></li>
+<li><del>https://onlinecourses.science.psu.edu/stat200/node/60</del></li>
 <li><a href="https://stanford.edu/~mwaskom/software/seaborn/examples/distplot_options.html">https://stanford.edu/~mwaskom/software/seaborn/examples/distplot_options.html</a></li>
+<li><a href="http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/what-is-a-hypothesis-test/">http://support.minitab.com/en-us/minitab/17/topic-library/basic-statistics-and-graphs/hypothesis-tests/basics/what-is-a-hypothesis-test/</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests">https://en.wikipedia.org/wiki/Student%27s_t-test#Unpaired_and_paired_two-sample_t-tests</a></li>
+<li><a href="https://onlinecourses.science.psu.edu/stat200/node/52">https://onlinecourses.science.psu.edu/stat200/node/52</a></li>
 </ol>
 
 </div>
