@@ -8,7 +8,12 @@ My project work will be uploaded here.
 ### Project 1: Test a Perceptual Phenomenon
 Using descriptive statistics and a statistical test to analyze the Stroop effect, a classic result of experimental psychology.
 
+<<<<<<< HEAD
 
 ### Project 2: Investigation of the Titanic dataset
 Using Pandas, Numpy, inferential statistics and machine learning to find out
 which factors affected the survival rate of the passengers onboard.
+=======
+### Project 2: Data Analysis of the Titianic dataset
+
+>>>>>>> origin/master
