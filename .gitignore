@@ -47,13 +47,10 @@ Temporary Items
 .apdisk
 
 # Unwanted ipython notebook directories
-<<<<<<< HEAD
 .ipynb_checkpoints
 
 # Do not upload these files
-=======
 *.ipynb_checkpoints
 
 # Unwanted files
->>>>>>> origin/master
 *.csv
