@@ -47,7 +47,7 @@ Temporary Items
 .apdisk
 
 # Unwanted ipython notebook directories
-.ipynb_checkpoints
+*.ipynb_checkpoints
 
 # Unwanted files
-.csv
+*.csv
