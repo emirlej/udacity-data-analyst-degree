@@ -48,3 +48,6 @@ Temporary Items
 
 # Unwanted ipython notebook directories
 .ipynb_checkpoints
+
+# Unwanted files
+.csv
