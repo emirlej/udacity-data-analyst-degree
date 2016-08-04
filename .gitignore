@@ -54,3 +54,6 @@ Temporary Items
 
 # Unwanted files
 *.csv
+
+# Unwanted folders
+.idea
